@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-card-title>List of Patients</mat-card-title>
+  <mat-nav-list>
+    <div *ngFor="let patient of patients; let i = index">
+      <mat-list-item [routerLink]="i">
+        <img matListAvatar [src]="patient.img" alt="Avatar">
+        <h3 matLine>{{ patient.name }}</h3>
+        <p matLine>
+          <span>{{ patient.id }}</span>
+        </p>
+      </mat-list-item>
+      <mat-divider *ngIf="i != patients.length - 1"></mat-divider>
+    </div>
+  </mat-nav-list>
+  <!-- <dg-items></dg-items> -->
+</mat-card>

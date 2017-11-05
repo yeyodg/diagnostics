@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*@import "~@angular/material/prebuilt-themes/indigo-pink.css";*/
+
+
+.container   {
+  padding: 20px;
+}
+.myred {
+    background-color: red;
+}
+.myyellow {
+    background-color: yellow;
+}
+.mygreen {
+    background-color: green;
+}
+.myblue {
+    background-color: blue;
+}
+.mypurple {
+    background-color: purple;
+}
