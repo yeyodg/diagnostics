@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Patient } from '../patient';
+import { Observable } from 'rxjs/Observable';
 
 import { PatientsService } from '../patients.service';
 
@@ -9,11 +10,12 @@ import { PatientsService } from '../patients.service';
   styleUrls: ['./patients-list.component.css']
 })
 export class PatientsListComponent implements OnInit {
-  patients: Patient[] = [];
-  constructor(private patientsService: PatientsService) { }
+  patients: Observable<Patient[]>;
+  // patients2: Patient[];
+
+  constructor (private patientsService: PatientsService) { }
 
   ngOnInit() {
-    this.patients = this.patientsService.getPatients();
+    console.log(this.patientsService.patients);
   }
-
 }

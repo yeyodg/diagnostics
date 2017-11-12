@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs/Rx';
+import { Subscription, Observable } from 'rxjs/Rx';
 
 import { PatientsService } from '../patients.service';
 import { Patient } from '../patient';
@@ -11,22 +11,29 @@ import { Patient } from '../patient';
   styleUrls: ['./patient-details.component.css']
 })
 export class PatientDetailsComponent implements OnInit, OnDestroy {
-  private subscription: Subscription;
+  private subscriptionRoute: Subscription;
+  private subscriptionPatient: Subscription;
+  private patients: Patient[] = [];
   private patient: Patient;
+
   constructor(
     private patientService: PatientsService,
     private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.subscription = this.activatedRoute.params.subscribe(
+    this.subscriptionRoute = this.activatedRoute.params.subscribe(
       (params: any) => {
-        this.patient = this.patientService.getPatient(params.id);
+        this.patient = this.patientService.patients[params.id]
       }
     );
   }
   ngOnDestroy () {
-    this.subscription.unsubscribe();
+    this.subscriptionRoute.unsubscribe();
+  }
+
+  onEdit () {
+
   }
 
 }

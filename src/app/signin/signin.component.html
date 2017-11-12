@@ -1,0 +1,40 @@
+<div *ngIf="auth.user | async; then authenticated else guest">
+        <!-- template will replace this div -->
+</div>
+<!-- User NOT logged in -->
+<ng-template #guest>
+  <div fxLayout="row">
+    <div fxFlex>
+      <mat-card>
+        <button mat-button (click)="auth.googleLogin()">
+          Sign in with google
+        </button>
+      </mat-card>
+    </div>
+    <div fxFlex>
+      <mat-card>
+        <mat-form-field>
+          <mat-select [(value)]="type">
+            <mat-option value="admin">Admin</mat-option>
+            <mat-option value="patient">Patient</mat-option>
+            <mat-option value="doctor">Doctor</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-card-actions>
+          <button mat-button (click)="auth.googleSignup(type)">
+            Sign up with google
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</ng-template>
+<!-- User logged in -->
+<ng-template #authenticated>
+  <div class="">
+    You are authenticated
+    <button mat-button (click)="auth.signOut()">
+        Logout
+    </button>
+  </div>
+</ng-template>

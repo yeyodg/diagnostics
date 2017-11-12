@@ -3,6 +3,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { CoreModule } from './core.module';
+import { AuthGuard } from './auth.guard';
+
+
+// import { AngularFireModule } from 'angularfire2';
+// import { AngularFirestoreModule } from 'angularfire2/firestore';
+// import { AngularFireAuthModule } from 'angularfire2/auth';
+// import { environment } from '../environments/environment';
+
 // Angular material and Animations
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
@@ -11,7 +20,10 @@ import {
   MatButtonModule,
   MatMenuModule,
   MatCardModule,
-  MatListModule
+  MatListModule,
+  MatSelectModule,
+  MatFormFieldModule,
+  MatProgressSpinnerModule
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -24,6 +36,12 @@ import { StartComponent } from './patients/start/start.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpService } from './http.service';
 import { PatientsService } from './patients/patients.service';
+import { LandingComponent } from './landing/landing.component';
+import { Parallax, ParallaxConfig } from 'ngx-parallax';
+import { SigninComponent } from './signin/signin.component';
+import { FooterComponent } from './footer/footer.component';
+
+
 
 @NgModule({
   declarations: [
@@ -33,6 +51,10 @@ import { PatientsService } from './patients/patients.service';
     PatientDetailsComponent,
     StartComponent,
     HeaderComponent,
+    LandingComponent,
+    Parallax,
+    SigninComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -46,9 +68,17 @@ import { PatientsService } from './patients/patients.service';
     MatMenuModule,
     FlexLayoutModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatProgressSpinnerModule,
+    CoreModule,
   ],
-  providers: [HttpService, PatientsService],
+  providers: [
+    HttpService,
+    PatientsService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

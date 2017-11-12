@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PatientsService } from './patients.service';
 
 @Component({
   selector: 'dg-patients',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PatientsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private patientsService: PatientsService) { }
 
   ngOnInit() {
   }
