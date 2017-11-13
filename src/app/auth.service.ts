@@ -53,6 +53,7 @@ export class AuthService {
       if (type) {
         this.updateUserData(credential.user, type);
       }
+      this.router.navigate(['/']);
     });
   }
 

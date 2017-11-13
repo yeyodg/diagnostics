@@ -1,15 +1,19 @@
-<mat-card>
+<mat-card *ngIf="!patientService.loading && patient">
   <mat-card-header>
     <img mat-card-avatar [src]="patient?.photoURL">
     <mat-card-title>{{ patient?.displayName }}</mat-card-title>
   </mat-card-header>
-  <img mat-card-image [src]="patient?.photoURL" alt="Photo of the patient">
+  <img
+    mat-card-image
+    style="padding-top: 10px;"
+    [src]="patient?.photoURL"
+    alt="Photo of the patient">
   <mat-card-content>
     <p>
       {{ patient?.description }}
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button (click)="onEdit()">EDIT</button>
+    <button mat-button (click)="openDialog()">EDIT</button>
   </mat-card-actions>
 </mat-card>

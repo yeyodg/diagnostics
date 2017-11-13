@@ -1,9 +1,12 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Inject } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription, Observable } from 'rxjs/Rx';
 
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+
 import { PatientsService } from '../patients.service';
 import { Patient } from '../patient';
+import { DescriptionDialogComponent } from './description-dialog.component';
 
 @Component({
   selector: 'dg-patient-details',
@@ -15,10 +18,12 @@ export class PatientDetailsComponent implements OnInit, OnDestroy {
   private subscriptionPatient: Subscription;
   private patients: Patient[] = [];
   private patient: Patient;
+  public description: string = 'Desde patients';
 
   constructor(
     private patientService: PatientsService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -32,8 +37,15 @@ export class PatientDetailsComponent implements OnInit, OnDestroy {
     this.subscriptionRoute.unsubscribe();
   }
 
-  onEdit () {
+  openDialog(): void {
+    let dialogRef = this.dialog.open(DescriptionDialogComponent, {
+      width: '600px',
+      data: { description: this.description }
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed ' + result);
+      this.description = result;
+    });
   }
-
 }

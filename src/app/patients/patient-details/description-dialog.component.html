@@ -1,0 +1,20 @@
+<div>
+  <h2 mat-dialog-title>Edit Description</h2>
+  <mat-dialog-content>
+    <mat-form-field class="example-full-width">
+      <textarea
+        matInput
+        placeholder="Description"
+        matTextareaAutosize
+        matAutosizeMinRows="2"
+        matAutosizeMaxRows="5"
+        [ngModel]="description"
+        #input
+        ></textarea>
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button (click)="onConfirm()">Confirm</button>
+    <button mat-button (click)="onCancel(input.value)">Cancel</button>
+  </mat-dialog-actions>
+</div>

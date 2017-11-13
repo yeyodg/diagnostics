@@ -1,14 +1,14 @@
-<div *ngIf="auth.user | async; then authenticated else guest">
-        <!-- template will replace this div -->
-</div>
-<!-- User NOT logged in -->
-<ng-template #guest>
-  <div fxLayout="row">
+<div class="container">
+  <div fxLayout="row" fxLayoutGap="20px">
     <div fxFlex>
       <mat-card>
+        <br>
+        <br>
         <button mat-button (click)="auth.googleLogin()">
           Sign in with google
         </button>
+        <br>
+        <br>
       </mat-card>
     </div>
     <div fxFlex>
@@ -28,13 +28,23 @@
       </mat-card>
     </div>
   </div>
-</ng-template>
-<!-- User logged in -->
-<ng-template #authenticated>
-  <div class="">
-    You are authenticated
-    <button mat-button (click)="auth.signOut()">
-        Logout
-    </button>
-  </div>
-</ng-template>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
