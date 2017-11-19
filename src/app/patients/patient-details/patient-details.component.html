@@ -3,12 +3,16 @@
     <img mat-card-avatar [src]="patient?.photoURL">
     <mat-card-title>{{ patient?.displayName }}</mat-card-title>
   </mat-card-header>
-  <img
+  <!-- <img
     mat-card-image
     style="padding-top: 10px;"
     [src]="patient?.photoURL"
-    alt="Photo of the patient">
+    alt="Photo of the patient"> -->
   <mat-card-content>
+    <h1 class="mat-display-1" style="margin-bottom: 0px;">Address</h1>
+    <agm-map [latitude]="latitude" [longitude]="longitude">
+      <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+    </agm-map>
     <p>
       {{ patient?.description }}
     </p>

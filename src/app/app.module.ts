@@ -26,6 +26,7 @@ import { LandingComponent } from './landing/landing.component';
 import { SigninComponent } from './signin/signin.component';
 import { FooterComponent } from './footer/footer.component';
 import { DescriptionDialogComponent } from './patients/patient-details/description-dialog.component';
+import { LocationService } from './global-services/location.service';
 
 
 
@@ -58,7 +59,8 @@ import { DescriptionDialogComponent } from './patients/patient-details/descripti
   providers: [
     HttpService,
     PatientsService,
-    AuthGuard
+    AuthGuard,
+    LocationService
   ],
   entryComponents: [
     DescriptionDialogComponent,

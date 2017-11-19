@@ -4,6 +4,7 @@ import { Subscription, Observable } from 'rxjs/Rx';
 
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
+
 import { PatientsService } from '../patients.service';
 import { Patient } from '../patient';
 import { DescriptionDialogComponent } from './description-dialog.component';
@@ -18,6 +19,9 @@ export class PatientDetailsComponent implements OnInit, OnDestroy {
   private subscriptionPatient: Subscription;
   private patients: Patient[] = [];
   private patient: Patient;
+  latitude: number = 10.48;
+  longitude: number = -66.9;
+  zoom: number = 4;
   public description: string = 'Desde patients';
 
   constructor(
