@@ -41,10 +41,15 @@
     </div>
   </div>
 </section>
-<mat-divider></mat-divider>
-<section class="map-section mat-typography" style="text-align: center">
-  <h1>Closest centers</h1>
-  <agm-map [latitude]="locationService.latitude" [longitude]="locationService.longitude" [zoom]="locationService.zoom">
+<mat-list>
+  <mat-divider class="divider"></mat-divider>
+</mat-list>
+<section
+  fxLayout="column"
+  class="map-section mat-typography"
+  style="text-align: center; margin-top: 30px;">
+  <h1>Location</h1>
+  <agm-map fxFLex [latitude]="locationService.latitude" [longitude]="locationService.longitude" [zoom]="locationService.zoom">
     <agm-marker [latitude]="locationService.latitude" [longitude]="locationService.longitude"></agm-marker>
   </agm-map>
 </section>
