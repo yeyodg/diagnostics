@@ -10,12 +10,10 @@ import { PatientsService } from '../patients.service';
   styleUrls: ['./patients-list.component.css']
 })
 export class PatientsListComponent implements OnInit {
-  patients: Observable<Patient[]>;
-  // patients2: Patient[];
 
   constructor (private patientsService: PatientsService) { }
 
   ngOnInit() {
-    console.log(this.patientsService.patients);
+
   }
 }

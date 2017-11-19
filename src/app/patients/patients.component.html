@@ -3,8 +3,8 @@
 </div>
 <div
   *ngIf="!patientsService.loading"
-  fxLayout="row">
-  <div fxFlex="33%">
+  fxLayout="row" fxLayoutWrap>
+  <div fxFlex="33%" fxFlex.xs="100%">
     <dg-patients-list></dg-patients-list>
   </div>
   <div fxFlex fxFlexOffset="5px">

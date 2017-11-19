@@ -1,20 +1,29 @@
 <div>
   <h2 mat-dialog-title>Edit Description</h2>
-  <mat-dialog-content>
-    <mat-form-field class="example-full-width">
+  <mat-dialog-content fxLayout="column">
+    <mat-form-field fxFlex>
       <textarea
-        matInput
-        placeholder="Description"
-        matTextareaAutosize
-        matAutosizeMinRows="2"
-        matAutosizeMaxRows="5"
-        [ngModel]="description"
-        #input
-        ></textarea>
+      matInput
+      placeholder="Address"
+      matTextareaAutosize
+      matAutosizeMinRows="1"
+      matAutosizeMaxRows="3"
+      [ngModel]="address"
+      ></textarea>
+    </mat-form-field>
+    <mat-form-field fxFlex>
+      <textarea
+      matInput
+      placeholder="Description"
+      matTextareaAutosize
+      matAutosizeMinRows="3"
+      matAutosizeMaxRows="5"
+      [ngModel]="description"
+      ></textarea>
     </mat-form-field>
   </mat-dialog-content>
   <mat-dialog-actions>
-    <button mat-button (click)="onConfirm()">Confirm</button>
+    <button mat-button type="onConfirm()">Confirm</button>
     <button mat-button (click)="onCancel(input.value)">Cancel</button>
   </mat-dialog-actions>
 </div>

@@ -20,7 +20,7 @@ export class AppComponent implements DoCheck {
 
 
   ngDoCheck () {
-    this.scroll = document.body.clientHeight < window.outerHeight;
+    this.scroll = document.body.clientHeight < window.innerHeight;
   }
 
 

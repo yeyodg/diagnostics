@@ -8,28 +8,28 @@ import 'rxjs/add/operator/delay';
 
 @Injectable()
 export class PatientsService {
-  loading: boolean;
+  loading: boolean = true;
   patientsCollection: AngularFirestoreCollection<Patient>;
   patientsObservable: Observable<Patient[]>;
-  patients: Patient[];
+  patients: Patient[] = [];
 
   constructor (private afs: AngularFirestore) {
+    this.loading = true;
+  }
+
+  public getPatients () {
     this.loading = true;
     this.patientsCollection = this.afs.collection('users', ref => ref.where('type', '==', 'patient'));
     this.patientsObservable = this.patientsCollection.valueChanges();
     this.patientsObservable
       .subscribe(data => {
-        this.loading = true;
-
+        console.log(data);
         this.patients = data;
         this.loading = false;
-        console.log('Data = ' + data);
       })
   }
+
 }
-
-
-
 
 
 

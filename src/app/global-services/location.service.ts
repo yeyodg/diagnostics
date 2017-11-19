@@ -16,13 +16,8 @@ export class LocationService {
     if (('geolocation' in navigator)) {
      navigator.geolocation.getCurrentPosition((position) => {
        this.zoom = 15;
-       console.log(this.zoom);
        this.latitude = position.coords.latitude;
        this.longitude = position.coords.longitude;
-       console.log('Latitude');
-       console.log(position.coords.latitude);
-       console.log('Longitude');
-       console.log(position.coords.longitude);
      });
    }
  }
