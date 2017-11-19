@@ -4,7 +4,7 @@
     <mat-toolbar color="primary">
       <div fxLayout="row">
         <div fxFlex fxHide.gt-sm="true">
-          <button  mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
+          <button  mat-button [matMenuTriggerFor]="appMenu"><mat-icon>menu</mat-icon></button>
         </div>
         <div fxFlex>
           <button mat-icon-button routerLink="/">
@@ -20,26 +20,62 @@
       <span style="flex: 1 1 auto;"></span>
       <div *ngIf="auth.user | async; then authenticated else guest">
       </div>
-      <ng-template #authenticated>
-        <button mat-button routerLink="/patients">
-          <mat-icon>supervisor_account</mat-icon>
-          Patients
-        </button>
-        <button mat-button (click)="auth.signOut()">
-          <mat-icon>directions_walk</mat-icon>
-          Logout
-        </button>
-      </ng-template>
-      <ng-template #guest>
-        <button mat-button routerLink="/signin">
-          <mat-icon>face</mat-icon>
-          Sign in
-        </button>
-      </ng-template>
+      <div fxLayout="row">
+        <div fxFlex fxHide.xs>
+          <div>
+            <div *ngIf="auth.user | async">
+              <button mat-button routerLink="/patients">
+                <mat-icon>supervisor_account</mat-icon>
+                Patients
+              </button>
+              <button mat-button (click)="auth.signOut()">
+                <mat-icon>directions_walk</mat-icon>
+                Logout
+              </button>
+            </div>
+            <div *ngIf="!(auth.user | async)">
+              <button mat-button routerLink="/signin">
+                <mat-icon>face</mat-icon>
+                Sign in
+              </button>
+            </div>
+          </div>
+          <!-- <ng-template #authenticated>
+            <button mat-button routerLink="/patients">
+              <mat-icon>supervisor_account</mat-icon>
+              Patients
+            </button>
+            <button mat-button (click)="auth.signOut()">
+              <mat-icon>directions_walk</mat-icon>
+              Logout
+            </button>
+          </ng-template>
+          <ng-template #guest>
+            <button mat-button routerLink="/signin">
+              <mat-icon>face</mat-icon>
+              Sign in
+            </button>
+          </ng-template> -->
+        </div>
+      </div>
+      <mat-menu #appMenu="matMenu">
+        <div *ngIf="auth.user | async">
+          <button mat-button routerLink="/patients">
+            <mat-icon>supervisor_account</mat-icon>
+            Patients
+          </button>
+          <button mat-button (click)="auth.signOut()">
+            <mat-icon>directions_walk</mat-icon>
+            Logout
+          </button>
+        </div>
+        <div *ngIf="!(auth.user | async)">
+          <button mat-button routerLink="/signin">
+            <mat-icon>face</mat-icon>
+            Sign in
+          </button>
+        </div>
+      </mat-menu>
     </mat-toolbar>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item> Settings </button>
-      <button mat-menu-item> Help </button>
-    </mat-menu>
   </mat-card>
 </header>

@@ -6,10 +6,10 @@
     class="dark-image mat-typography"
     fxLayout="column"
     fxLayoutAlign="space-around space-around">
-    <div fxFlex fxHide.lt-sm fxFlexAlign="center" style="text-align: justify;">
+    <div fxFlex fxHide.sm fxHide.xs fxFlexAlign="center" style="text-align: justify;">
       <h1 class="mat-display-4 parallax-typography">Your medical record</h1>
     </div>
-    <div fxFlex fxHide.gt-xs fxFlexAlign="center">
+    <div fxFlex fxHide.gt-sm fxFlexAlign="center">
       <h1 class="mat-display-3 parallax-typography">Your medical record</h1>
     </div>
     <div fxFlex fxFlexAlign="center">
@@ -23,21 +23,27 @@
 <br>
 <br>
 <section class="mat-typography container">
-  <div fxLayout="row" fxLayoutAlign="space-around">
-    <div fxFlex="30" class="text-center">
+  <div fxLayout="row" fxLayoutWrap fxLayoutAlign="space-around">
+    <div fxFlex.gt-xs="30" fxFlex="90" class="text-center">
       <mat-icon>child_care</mat-icon>
       <h2>Easy to use</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiumdod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
-    <div fxFlex="30" class="text-center">
+    <div fxFlex.gt-xs="30" fxFlex="90" class="text-center">
       <mat-icon>security</mat-icon>
       <h2>Secure</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiumdod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
-    <div fxFlex="30" class="text-center">
+    <div fxFlex.gt-xs="30" fxFlex="90" class="text-center">
       <mat-icon>money_off</mat-icon>
       <h2>Free</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
   </div>
+</section>
+<section class="map-section mat-typography" style="text-align: center">
+  <h1>Closest centers</h1>
+  <agm-map [latitude]="latitude" [longitude]="longitude">
+    <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+  </agm-map>
 </section>

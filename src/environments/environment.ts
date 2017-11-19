@@ -12,5 +12,8 @@ export const environment = {
     projectId: "diagnosticos-ea215",
     storageBucket: "diagnosticos-ea215.appspot.com",
     messagingSenderId: "817703154067"
+  },
+  googleMaps: {
+    apikey: 'AIzaSyAvPSux5MvrGFj6P1R5mJPaU8yJ0KXkSbc'
   }
 };

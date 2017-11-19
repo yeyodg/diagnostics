@@ -14,7 +14,8 @@ import {
   MatFormFieldModule,
   MatProgressSpinnerModule,
   MatDialogModule,
-  MatInputModule
+  MatInputModule,
+  MatSidenavModule
 }                           from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -35,8 +36,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatFormFieldModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    MatInputModule
-    
+    MatInputModule,
+    MatSidenavModule    
   ],
   exports: [
     CommonModule,
@@ -52,8 +53,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatFormFieldModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    MatInputModule
-    
+    MatInputModule,
+    MatSidenavModule    
   ],
   declarations: []
 })

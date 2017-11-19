@@ -1,5 +1,8 @@
 <dg-header></dg-header>
-<div>
-  <router-outlet></router-outlet>
-</div>
-<dg-footer></dg-footer>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+<!-- <footer [ngClass]="{'absolute': (document.body.clientHeight < window.outerHeight)}"> -->
+<footer>
+  <dg-footer [ngClass]="{'absoluteFooter': scroll}" ></dg-footer>
+</footer>

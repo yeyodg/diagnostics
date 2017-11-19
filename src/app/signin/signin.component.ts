@@ -8,7 +8,9 @@ import { AuthService } from '../auth.service';
 })
 export class SigninComponent implements OnInit {
   type = 'patient';
-  constructor(public auth: AuthService) { }
+  constructor(
+    public auth: AuthService
+  ) { }
 
   ngOnInit() {
   }

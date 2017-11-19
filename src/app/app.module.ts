@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { environment } from '../environments/environment';
 
 import { CoreModule } from './core.module';
 import { MaterialModule } from './material.module';
@@ -10,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 
 import { Parallax, ParallaxConfig } from 'ngx-parallax';
+import { AgmCoreModule } from '@agm/core';
 
 import { HttpService } from './http.service';
 import { PatientsService } from './patients/patients.service';
@@ -47,7 +49,11 @@ import { DescriptionDialogComponent } from './patients/patient-details/descripti
     HttpModule,
     AppRoutingModule,
     CoreModule,
-    MaterialModule
+    MaterialModule,
+    AgmCoreModule.forRoot({
+      apiKey: environment.googleMaps.apikey,
+      libraries: ["places"]
+    })
   ],
   providers: [
     HttpService,
